@@ -10,104 +10,318 @@
 </head>
 <body>
 
-    <div class="menu-header">
-        <h1>THE STOLE MENU</h1>
-        <p class="tagline">Chips & Custom Toppings</p>
+    <div class="view-toggle">
+        <button id="toggle-view-btn" class="toggle-btn">Switch to Owner Dashboard</button>
+        <p id="auth-status" class="auth-status">Connecting...</p>
     </div>
 
-    <div class="container">
+    <!-- CUSTOMER VIEW (MENU) -->
+    <div id="customer-view">
+        <div class="menu-header">
+            <h1>THE STOLE MENU</h1>
+            <p class="tagline">Gourmet Chips & Custom Toppings</p>
+        </div>
 
-        <section class="menu-section" id="chips-items">
-            <h2>🍟 Chips Selection</h2>
-            <div class="menu-item" data-price="30">
-                <div class="item-details">
-                    <span class="item-name">LAYS AMERICAN STYLE</span>
-                    <span class="item-description">Classic salted flavor for a true potato chip experience.</span>
+        <div class="container">
+            <section class="menu-section" id="chips-items">
+                <h2>🍟 Chips Selection</h2>
+                <div class="menu-item" data-id="lays" data-price="30">
+                    <div class="item-details">
+                        <span class="item-name">LAYS AMERICAN STYLE</span>
+                        <span class="item-description">Classic salted flavor for a true potato chip experience.</span>
+                    </div>
+                    <span class="item-price">₹30</span>
                 </div>
-                <span class="item-price">₹30</span>
-            </div>
-            <div class="menu-item" data-price="30">
-                <div class="item-details">
-                    <span class="item-name">PARLE PERI PERI</span>
-                    <span class="item-description">Spicy, tangy, and addictive peri peri seasoning.</span>
+                <div class="menu-item" data-id="peri-peri" data-price="30">
+                    <div class="item-details">
+                        <span class="item-name">PARLE PERI PERI</span>
+                        <span class="item-description">Spicy, tangy, and addictive peri peri seasoning.</span>
+                    </div>
+                    <span class="item-price">₹30</span>
                 </div>
-                <span class="item-price">₹30</span>
-            </div>
-            <div class="menu-item" data-price="30">
-                <div class="item-details">
-                    <span class="item-name">KUR KURE MASALA</span>
-                    <span class="item-description">Crunchy corn puffs with a rich Indian masala blend.</span>
+                <div class="menu-item" data-id="kurkure" data-price="30">
+                    <div class="item-details">
+                        <span class="item-name">KUR KURE MASALA</span>
+                        <span class="item-description">Crunchy corn puffs with a rich Indian masala blend.</span>
+                    </div>
+                    <span class="item-price">₹30</span>
                 </div>
-                <span class="item-price">₹30</span>
-            </div>
-            <div class="menu-item" data-price="30">
-                <div class="item-details">
-                    <span class="item-name">CHILL CHATKA</span>
-                    <span class="item-description">A zesty, spicy flavor profile that delivers a kick.</span>
+                <div class="menu-item" data-id="chatka" data-price="30">
+                    <div class="item-details">
+                        <span class="item-name">CHILL CHATKA</span>
+                        <span class="item-description">A zesty, spicy flavor profile that delivers a kick.</span>
+                    </div>
+                    <span class="item-price">₹30</span>
                 </div>
-                <span class="item-price">₹30</span>
-            </div>
-        </section>
+            </section>
 
-        <section class="menu-section" id="toppings">
-            <h2>🧀 Premium Toppings</h2>
-            <div class="menu-item" data-price="35">
-                <div class="item-details">
-                    <span class="item-name">CHEESE CHUNCH</span>
-                    <span class="item-description">Crispy cheese bits for an ultimate textural experience.</span>
+            <section class="menu-section" id="toppings">
+                <h2>🧀 Premium Toppings</h2>
+                <div class="menu-item" data-id="cheese-crunch" data-price="35">
+                    <div class="item-details">
+                        <span class="item-name">CHEESE CHUNCH</span>
+                        <span class="item-description">Crispy cheese bits for an ultimate textural experience.</span>
+                    </div>
+                    <span class="item-price">₹35</span>
                 </div>
-                <span class="item-price">₹35</span>
-            </div>
-            <div class="menu-item" data-price="39">
-                <div class="item-details">
-                    <span class="item-name">CREAMY MAYO FUSION</span>
-                    <span class="item-description">Rich mayonnaise blended with herbs and spices.</span>
+                <div class="menu-item" data-id="mayo-fusion" data-price="39">
+                    <div class="item-details">
+                        <span class="item-name">CREAMY MAYO FUSION</span>
+                        <span class="item-description">Rich mayonnaise blended with herbs and spices.</span>
+                    </div>
+                    <span class="item-price">₹39</span>
                 </div>
-                <span class="item-price">₹39</span>
-            </div>
-            <div class="menu-item" data-price="49">
-                <div class="item-details">
-                    <span class="item-name">CORN AND CHEESY DELIGHT</span>
-                    <span class="item-description">Sweet, tender corn kernels mixed with melted cheese sauce.</span>
+                <div class="menu-item" data-id="corn-cheese" data-price="49">
+                    <div class="item-details">
+                        <span class="item-name">CORN AND CHEESY DELIGHT</span>
+                        <span class="item-description">Sweet, tender corn kernels mixed with melted cheese sauce.</span>
+                    </div>
+                    <span class="item-price">₹49</span>
                 </div>
-                <span class="item-price">₹49</span>
-            </div>
-            <div class="menu-item" data-price="39">
-                <div class="item-details">
-                    <span class="item-name">CHATPAT MIX</span>
-                    <span class="item-description">Our house blend of tangy spices and crunchy Indian sev.</span>
+                <div class="menu-item" data-id="chatpat-mix" data-price="39">
+                    <div class="item-details">
+                        <span class="item-name">CHATPAT MIX</span>
+                        <span class="item-description">Our house blend of tangy spices and crunchy Indian sev.</span>
+                    </div>
+                    <span class="item-price">₹39</span>
                 </div>
-                <span class="item-price">₹39</span>
-            </div>
-            <div class="menu-item" data-price="69">
-                <div class="item-details">
-                    <span class="item-name">MEXICAN NACHO</span>
-                    <span class="item-description">Jalapeños, salsa spices, and savory cheese dust.</span>
+                <div class="menu-item" data-id="mexican-nacho" data-price="69">
+                    <div class="item-details">
+                        <span class="item-name">MEXICAN NACHO</span>
+                        <span class="item-description">Jalapeños, salsa spices, and savory cheese dust.</span>
+                    </div>
+                    <span class="item-price">₹69</span>
                 </div>
-                <span class="item-price">₹69</span>
-            </div>
-        </section>
-        
-        <section class="menu-section" id="drinks">
-            <h2>🥤 Refreshments</h2>
-            <div class="menu-item" data-price="15">
-                <div class="item-details">
-                    <span class="item-name">LEMON JUICE</span>
-                    <span class="item-description">Freshly squeezed, chilled, and sweetened to perfection.</span>
+            </section>
+            
+            <section class="menu-section" id="drinks">
+                <h2>🥤 Refreshments</h2>
+                <div class="menu-item" data-id="lemon-juice" data-price="15">
+                    <div class="item-details">
+                        <span class="item-name">LEMON JUICE</span>
+                        <span class="item-description">Freshly squeezed, chilled, and sweetened to perfection.</span>
+                    </div>
+                    <span class="item-price">₹15</span>
                 </div>
-                <span class="item-price">₹15</span>
-            </div>
-        </section>
+            </section>
 
-        <footer class="menu-footer">
-            <p>Thank you for stopping by! All prices are inclusive of taxes.</p>
-        </footer>
+            <footer class="menu-footer">
+                <p>Thank you for stopping by! All prices are inclusive of taxes.</p>
+                <p class="user-id-display">Your Customer ID: <span id="customer-id-span">Loading...</span></p>
+            </footer>
 
+        </div>
+    </div>
+    
+    <!-- OWNER VIEW (DASHBOARD) -->
+    <div id="owner-dashboard" style="display: none;">
+        <div class="menu-header" style="background-color: var(--text-dark); color: var(--background-cream);">
+            <h1>OWNER DASHBOARD</h1>
+            <p class="tagline">Live Incoming Orders</p>
+        </div>
+        <div class="container">
+            <h2 style="color: red;">🛎️ NEW ORDERS WAITING!</h2>
+            <div id="orders-list">
+                <!-- Orders will be injected here by JavaScript -->
+                <p class="empty-state">No new orders yet! Waiting for customers to tap items.</p>
+            </div>
+        </div>
     </div>
 
     <!-- Custom Message Box for interactive feedback -->
     <div id="message-box" class="message-box"></div>
     
-    <script src="script.js"></script>
+    <!-- JavaScript with Firebase logic for real-time ordering -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, query, onSnapshot, doc, deleteDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // setLogLevel('Debug'); // Uncomment to see Firebase logs
+
+        // 1. FIREBASE SETUP
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const dbApp = initializeApp(firebaseConfig);
+        const db = getFirestore(dbApp);
+        const auth = getAuth(dbApp);
+
+        let userId = 'unknown'; // Will be set after auth
+        let isAuthReady = false;
+
+        const customerView = document.getElementById('customer-view');
+        const ownerDashboard = document.getElementById('owner-dashboard');
+        const toggleBtn = document.getElementById('toggle-view-btn');
+        const authStatus = document.getElementById('auth-status');
+        const customerIdSpan = document.getElementById('customer-id-span');
+        const ordersList = document.getElementById('orders-list');
+        const menuItems = document.querySelectorAll('.menu-item');
+        const messageBox = document.getElementById('message-box');
+        
+        // 2. AUTHENTICATION (Must complete before Firestore access)
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                userId = user.uid;
+                customerIdSpan.textContent = userId.substring(0, 8) + '...';
+                authStatus.textContent = 'Ready (User ID: ' + userId.substring(0, 4) + '...)';
+                isAuthReady = true;
+                
+                // Once authenticated, start the real-time order listener for the owner dashboard
+                setupRealTimeOrderListener();
+
+            } else {
+                try {
+                    if (typeof __initial_auth_token !== 'undefined') {
+                        await signInWithCustomToken(auth, __initial_auth_token);
+                    } else {
+                        await signInAnonymously(auth);
+                    }
+                } catch (error) {
+                    console.error("Firebase Auth Error:", error);
+                    authStatus.textContent = 'Auth Failed';
+                }
+            }
+        });
+        
+        // 3. CORE FIREBASE FUNCTIONS
+        
+        // Public collection path for orders visible to all users (the owner)
+        const getOrdersCollectionRef = () => {
+            return collection(db, `artifacts/${appId}/public/data/orders`);
+        };
+
+        /**
+         * Customer action: Sends the order to Firestore.
+         */
+        const placeOrder = async (itemName, itemPrice) => {
+            if (!isAuthReady) {
+                showMessage("Database connecting, please try again in a moment.", false);
+                return;
+            }
+
+            try {
+                await addDoc(getOrdersCollectionRef(), {
+                    customer_id: userId,
+                    item_name: itemName,
+                    price: itemPrice,
+                    timestamp: serverTimestamp(),
+                    status: 'pending' 
+                });
+                showMessage(`✅ Order for "${itemName}" sent! Please proceed to the counter.`, true);
+            } catch (error) {
+                console.error("Error placing order:", error);
+                showMessage("❌ Failed to send order. Please check connection.", false);
+            }
+        };
+
+        /**
+         * Owner action: Marks an order as complete and removes it from the list.
+         */
+        window.markOrderDone = async (orderId) => {
+            try {
+                // To mark as 'done' for cleanup, we just delete it from the current list.
+                await deleteDoc(doc(db, `artifacts/${appId}/public/data/orders`, orderId));
+                showMessage(`Order ${orderId.substring(0, 4)}... marked as complete.`, true);
+            } catch (error) {
+                console.error("Error marking order as done:", error);
+                showMessage("❌ Failed to mark order done.", false);
+            }
+        };
+
+
+        /**
+         * Owner Dashboard: Listens for new orders in real-time.
+         */
+        const setupRealTimeOrderListener = () => {
+            if (!isAuthReady) return;
+
+            // Fetch orders in real-time
+            onSnapshot(getOrdersCollectionRef(), (snapshot) => {
+                ordersList.innerHTML = '';
+                
+                if (snapshot.empty) {
+                    ordersList.innerHTML = '<p class="empty-state">No new orders yet! Waiting for customers to tap items.</p>';
+                    return;
+                }
+
+                snapshot.docs.forEach(docSnapshot => {
+                    const order = docSnapshot.data();
+                    const orderId = docSnapshot.id;
+                    const timeString = order.timestamp ? 
+                        new Date(order.timestamp.seconds * 1000).toLocaleTimeString() : 
+                        'Processing...';
+
+                    const orderElement = document.createElement('div');
+                    orderElement.className = 'order-card pending-new';
+                    orderElement.innerHTML = `
+                        <div class="order-header">
+                            <span class="order-time">${timeString}</span>
+                            <span class="order-customer-id">Customer: ${order.customer_id.substring(0, 8)}...</span>
+                        </div>
+                        <h3 class="order-item-name">${order.item_name}</h3>
+                        <p class="order-price">Price: ₹${order.price}</p>
+                        <button onclick="markOrderDone('${orderId}')" class="done-btn">✅ Done</button>
+                    `;
+                    ordersList.appendChild(orderElement);
+                });
+            }, (error) => {
+                console.error("Firestore Listener Error:", error);
+                ordersList.innerHTML = '<p class="empty-state error">Error fetching orders.</p>';
+            });
+        };
+
+        // 4. UI INTERACTIVITY
+        
+        // Custom message box function (Replaces alert())
+        const showMessage = (text, isSuccess) => {
+            messageBox.textContent = text;
+            messageBox.style.backgroundColor = isSuccess ? '#4CAF50' : '#F44336';
+            messageBox.classList.add('visible');
+
+            setTimeout(() => {
+                messageBox.classList.remove('visible');
+            }, 3000);
+        };
+
+        // Item click handler (Customer order placement)
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const itemName = item.querySelector('.item-name').textContent;
+                const itemPrice = parseInt(item.getAttribute('data-price'));
+                
+                placeOrder(itemName, itemPrice);
+
+                // Subtle feedback effect 
+                item.style.boxShadow = '0 0 15px rgba(93, 64, 55, 0.6)';
+                setTimeout(() => {
+                    item.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.08)'; 
+                }, 400);
+            });
+        });
+
+        // Toggle between Customer and Owner views
+        let isOwnerView = false;
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                console.log("Toggle button clicked. Current view:", isOwnerView ? 'Owner' : 'Customer'); // Added debugging log
+                try {
+                    isOwnerView = !isOwnerView;
+                    if (isOwnerView) {
+                        customerView.style.display = 'none';
+                        ownerDashboard.style.display = 'block';
+                        toggleBtn.textContent = 'Switch to Customer Menu';
+                    } else {
+                        customerView.style.display = 'block';
+                        ownerDashboard.style.display = 'none';
+                        toggleBtn.textContent = 'Switch to Owner Dashboard';
+                    }
+                } catch (e) {
+                    console.error("Error during view toggle:", e);
+                    showMessage("A view error occurred. Check console for details.", false);
+                }
+            });
+        }
+    </script>
 </body>
 </html>
